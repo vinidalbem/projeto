@@ -1,7 +1,7 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const routes = require("./routes/userRoutes");
-const PORT = 80;
+const PORT = 3000;
 
 const server = express();
 server.engine("handlebars", handlebars({ defaultLayout: "main" }));
