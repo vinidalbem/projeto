@@ -71,7 +71,12 @@ userController.showFormEdit = function (req, res) {
 };
 
 userController.makeDeleteReq = function (req, res) {
-    axios.delete('/' + req.params.id)
+    axios.delete('/' + req.params.id,{
+        proxy: {
+            host: HOST_IP,
+            port: PORT,
+        }   
+    })
         .then(function () {
             res.status(200).redirect("/");
         })
