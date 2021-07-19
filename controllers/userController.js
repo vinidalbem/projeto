@@ -2,6 +2,9 @@ const user = require('../models/user');
 const axios = require('axios');
 const qs = require('querystring');
 
+const PORT = 3000;
+const HOST_IP = "18.228.205.232";
+
 const userController = {};
 
 userController.findAll = function (req, res) {
@@ -86,7 +89,9 @@ userController.makeEditReq = function (req, res) {
         {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
-            }
+            },
+            hostname: HOST_IP,
+            port: PORT
         }
     )
         .then(function () {
