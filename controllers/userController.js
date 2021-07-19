@@ -90,8 +90,10 @@ userController.makeEditReq = function (req, res) {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            hostname: HOST_IP,
-            port: PORT
+            proxy: {
+                host: HOST_IP,
+                port: PORT,
+            }    
         }
     )
         .then(function () {
